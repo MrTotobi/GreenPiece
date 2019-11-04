@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import ugettext as _
 
 class Producto(models.Model):
     codigo = models.CharField(max_length=5)
@@ -13,7 +14,9 @@ class Producto(models.Model):
         return self.nombre
 
     class Meta:
+        db_table = 'productos'
+
         permissions = (
-            ('admin',('Es admin')),
-            ('cliente',('Es cliente')),
+            ('admin',_('Es admin')),
+            ('cliente',_('Es cliente')),
         )
