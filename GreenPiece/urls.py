@@ -21,5 +21,6 @@ urlpatterns = [
     path('',include('PagVenta.urls')),
     path('index',include('PagVenta.urls')),
     path('articulos_geeks',include('PagVenta.urls')),
-    path('juegos_mesa',include('PagVenta.urls'))
+    path('juegos_mesa',include('PagVenta.urls')),
+    path('formulario',include('PagVenta.urls'))
 ]

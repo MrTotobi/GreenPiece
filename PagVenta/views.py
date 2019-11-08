@@ -9,3 +9,5 @@ def articulos_geek(request):
 def juegos_mesa(request):
     return render(request,'app/juegos_mesa.html')
 
+def formulario(request):
+    return render(request,'app/formulario.html')
