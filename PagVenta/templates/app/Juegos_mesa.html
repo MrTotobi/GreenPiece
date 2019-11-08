@@ -1,0 +1,150 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Green Piece Store</title>
+    <!--JavaScript-->
+    <script src="{% static 'libs/jquery.min.js' %"></script>
+    <script src="{% static 'libs/jquery.validate.min.js' %"></script>
+    <script src="{% static 'libs/bootstrap.min.js' %"></script>
+    <!--css-->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Green Piece Store - Juegos de Mesa</title>
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="logo">
+            <a href="index"><img class="logo" src="{% static 'img/logo-temporal.png' %}" alt="LOGO"></a>
+            <a id="text-logo" href="index">
+                <h2 id="name">GreenPiece <br> Store</h2>
+            </a>
+        </div>
+
+        <div class="nav">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="juegos_mesa">Juegos de Mesa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articulos_geeks">Articulos Geek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Formulario.html">Ingrese datos de envio</a></li>
+                </ul>
+            </nav>
+
+
+        </div>
+
+        <div class="nav-bar">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Fuera de servicio" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+            </form>
+        </div>
+
+
+    </div>
+    <div>
+        <h3 id="banner">Juegos de mesas:</h3>
+        <div class="container-jmv-superior">
+
+            <div class="jmv">
+                <img src="../../../static/img/doom.jpg" alt="">
+                <h3>Doom: El juego de tablero base</h3>
+                <p>En DOOM: El juego de tablero disfrutas</p>
+                <p>de una experiencia de combate táctico</p>
+                <p> completamente rediseñada y basada en</p>
+                <p>el famoso videojuego</p>
+                <p><b>Precio:</b>$9.990</p>
+            </div>
+            <div class="jmv">
+                <img src="../../../static/img/jmcranium.jpg" alt="">
+                <h3>Cranium </h3>
+                <p>Este juego de mesa te entregará tardes</p>
+                <p>de diversión.Da vuelta la carta,da vuelta</p>
+                <p>el reloj de arena y que empiece la diversión.</p>
+                <p>Incluye diversosdesafíos como “el gato creativo”,</p>
+                <p>traza, moldea y dibuja sencillas obras de arte.</p>
+                <p>“Lombri letra”, deletrea palabras al revés,</p>
+                <p>resuelve juegos de palabras y explica el</p>
+                <p>significado de palabras chistosas</p>
+                <p><b>Precio:</b>$19.990</p>
+
+            </div>
+            <div class="jmv">
+                <img src="../../../static/img/jmfornite.jpg" alt="">
+                <h3>Monopoly Fornite</h3>
+                <p>¿Se imaginan como sería jugar Monopoly </p>
+                <p>sin nada de dinero? ¿Sin construir casas,</p>
+                <p>hoteles ni cobrarle la renta a tus amigos?</p>
+                <p>Pues bien, la nueva versión de Monopoly Fortnite es</p>
+                <p>una de las ediciones más únicas que se han</p>
+                <p>lanzado de este popular juego de mesa.</p>
+                <p><b>Precio:</b>$18.990</p>
+
+            </div>
+        </div>
+
+        <div class="container-jmv-inferior">
+            <div class="jmv">
+                <img src="../../../static/img/cthulu.jpg" alt="">
+                <h3>Juego cartas fluxx Cthulhu</h3>
+                <p>¡Han robado el Necronomicón! Una granja </p>
+                <p>en las colinas está experimentando una horrible</p>
+                <p>metamorfosis, y las abominaciones se revuelven</p>
+                <p> en tumbas bajo el hielo plagado de pingüinos.</p>
+                <p> ¿Te conducirá tu curiosidad a una inevitable perdición o</p>
+                <p>acaso eres un sectario oculto? ¡Echa un vistazo al siempre</p>
+                <p>cambiante rostro de la locura en Fluxx Cthulhu!</p>
+                <p><b>Precio:</b>$15.990</p>
+            </div>
+            <div class="jmv">
+                <img src="../../../static/img/jmpokemon.jpg" alt="">
+                <h3>Pokemon TCG Melmetal -GX Box</h3>
+                <p>¡Alianzas Fuertes, Pokémon poderosos!</p>
+                <p>Una alianza poderosa da lugar a un gran equipo de</p>
+                <p>RELEVOS, ¡y los buenos compañeros luchan más duro</p>
+                <p>para ganar juntos! Elige la intensa historia y el poder</p>
+                <p>psíquico de Mewtwo y Mew-GX, los nervios de acero y la</p>
+                <p>concentración de Lucario y Melmetal-GX</p>
+                <p><b>Precio:</b>$9.990</p>
+
+            </div>
+            <div class="jmv">
+                <img src="../../../static/img/bb.jpg" alt="">
+                <h3>Juego de mesa de Breaking Bad</h3>
+                <p>Breaking Bad el juego de tablero está basado en la famosa</p>
+                <p>serie de televisión, y te lleva hasta los traicioneros</p>
+                <p> bajos fondos de Albuquerque, donde podrás ponerte en</p>
+                <p> la piel de las facciones criminales, como Heisenberg,</p>
+                <p> Los Pollos Hermanos o el Cartel de Juarez, o unirte a las</p>
+                <p> filas de la DEA </p>
+                <p><b>Precio:</b>$19.990</p>
+            </div>
+
+        </div>
+    </div>
+    <br><br><br>
+    <footer id="fondo">
+        <div id="rss">
+            <img id="rss_img1" src="../../../static/img/Logo-face.png" alt="">
+            <img id="rss_img2" src="../../../static/img/Logo-insta.png" alt="">
+            <img id="rss_img3" src="../../../static/img/Logo-wsp.png" alt="">
+        </div>
+        <div id="derechos">
+            <p>Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

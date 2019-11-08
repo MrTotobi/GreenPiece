@@ -1,0 +1,128 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Green Piece Store</title>
+    <!--JavaScript-->
+    <script src="{% static 'libs/jquery.min.js' %"></script>
+    <script src="{% static 'libs/jquery.validate.min.js' %"></script>
+    <script src="{% static 'libs/bootstrap.min.js' %"></script>
+    <!--css-->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Green Piece Store - Articulos Geek</title>
+</head>
+
+<body>
+    <div class="header">
+
+        <div class="logo">
+            <a href="index"><img class="logo" src="{% static 'img/logo-temporal.png' %}" alt="LOGO"></a>
+            <a id="text-logo" href="index">
+                <h2 id="name">GreenPiece <br> Store</h2>
+            </a>
+        </div>
+
+        <div class="nav">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="juegos_mesa">Juegos de Mesa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articulos_geeks">Articulos Geek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Formulario.html">Ingrese datos de envio</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="nav-bar">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </div>
+
+
+    </div>
+    <div>
+        <h3 id="banner">Articulos geek:</h3>
+        <div class="container-jmv-superior">
+
+            <div class="jmv">
+                <img src="../../../static/img/fdoffy.jpg" alt="">
+                <h3>Funko Doflamingo</h3>
+                <p>Funko de la serie de animada one piece 15 cm</p>
+
+                <p><b>Precio:</b>$15.990</p>
+
+            </div>
+            <div class="jmv">
+                <img src="../../../static/img/fmario.jpg" alt="">
+                <h3>Set de figuras</h3>
+                <h3>de super mario</h3>
+                <p>6 personajes de super mario 10 cm </p>
+                <p><b>Precio:</b>$19.990</p>
+            </div>
+            <div class="jmv">
+                <img src="../../../static/img/pplatano.jpg" alt="">
+                <h3>Peluche de platano</h3>
+                <p>Peluche de Super Mario Bros 30 cm</p>
+
+                <p><b>Precio:</b>$9.990</p>
+            </div>
+        </div>
+
+        <div class="container-jmv-inferior">
+            <div class="jmv">
+                <img src="../../../static/img/bullet.jpg" alt="">
+                <h3>Peluche Bullet </h3>
+                <p>Peluche de Super Mario Bros 30cm</p>
+
+                <p><b>Precio:</b>$9.990</p>
+
+
+            </div>
+            <div class="jmv">
+                <img src="../../../static/img/ppika.jpg" alt="">
+                <h3>Peluche Pikachu </h3>
+                <p>Peluche de pikachu de la serie animada Pokemon 40 cm</p>
+
+                <p><b>Precio:</b>$9.990</p>
+
+
+
+            </div>
+            <div class="jmv">
+                <img src="../../../static/img/yugi.jpg" alt="">
+                <h3>Figura coleccionable de Yugi </h3>
+                <p>Figura coleccionable de la serie animada Yu-gi-oh 20 cm </p>
+                <p><b>Precio:</b>$39.990</p>
+
+            </div>
+
+        </div>
+
+    </div>
+    <br><br><br>
+    <footer id="fondo">
+        <div id="rss">
+            <img id="rss_img1" src="../../../static/img/Logo-face.png" alt="">
+            <img id="rss_img2" src="../../../static/img/Logo-insta.png" alt="">
+            <img id="rss_img3" src="../../../static/img/Logo-wsp.png" alt="">
+        </div>
+        <div id="derechos">
+            <p>Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
