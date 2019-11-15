@@ -20,3 +20,18 @@ class Producto(models.Model):
             ('admin',_('Es admin')),
             ('cliente',_('Es cliente')),
         )
+
+class Datos_Cliente(models.Model):
+    Nombre_Completo = models.CharField(max_length=100)
+    Rut = models.CharField(max_length=10)
+    Email = models.CharField(max_length=70)
+    Fecha_de_Nacimiento = models.DateField()
+    Telefono_de_Contacto = models.CharField(max_length=12) 
+    Region = models.TextField()
+    Comuna = models.TextField()
+    Vivienda = models.TextField()
+
+    def __str__(self):
+        return self.nombre
+
+
