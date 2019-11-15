@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <title>Listar Producto</title>
+</head>
+<body>
+    <h1>Listar Producto</h1>
+    <ul>
+        {% for c in Producto %}
+        <li>
+            {{ c.codigo}} , {{c.nombre}} , {{c.descripcion}} $ {{c.precio}} , {{c.stock}}
+            <a href="/editarProducto/{{c.id}}">Editar</a>
+            <a href="/borrarProducto/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');">            
+            Borrar</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
