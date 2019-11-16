@@ -11,7 +11,7 @@ class Producto(models.Model):
     stock = models.IntegerField()
 
     def __str__(self):
-        return self.nombre
+        return self.codigo
 
     class Meta:
         db_table = 'productos'
@@ -32,6 +32,6 @@ class Datos_Cliente(models.Model):
     Vivienda = models.TextField()
 
     def __str__(self):
-        return self.nombre
+        return self.Rut
 
 

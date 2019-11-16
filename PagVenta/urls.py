@@ -7,4 +7,8 @@ urlpatterns = [
     path('articulos_geeks',views.articulos_geek),
     path('juegos_mesa',views.juegos_mesa),
     path('formulario',views.formulario),
+    path('agregarProducto',views.inscribir_producto),
+    path('eliminarProducto/<int:producto_id>',views.borrar_producto),
+    path('editarProducto/<int:producto_id>',views.editar_producto),
+    path('listarProductos',views.listar_producto),
 ]

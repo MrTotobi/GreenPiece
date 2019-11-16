@@ -22,5 +22,9 @@ urlpatterns = [
     path('index',include('PagVenta.urls')),
     path('articulos_geeks',include('PagVenta.urls')),
     path('juegos_mesa',include('PagVenta.urls')),
-    path('formulario',include('PagVenta.urls'))
+    path('formulario',include('PagVenta.urls')),
+    path('agregarProducto',include('PagVenta.urls')),
+    path('editarProducto/<int:producto_id>',include('PagVenta.urls')),
+    path('eliminarProducto/<int:producto_id>',include('PagVenta.urls')),
+    path('listarProductos',include('PagVenta.urls')),
 ]
