@@ -52,12 +52,12 @@
 
 
     <div class="container-form">
-        <form action="#" method="POST" id="formulario" onsubmit="myFunction();return false">
-
+        <form method="POST" id="formulario">
+            {% csrf_token %}
             <table class="table table-hover" id="table-formulario">
                 <tr>
                     <td><label>Nombre Completo</label></td>
-                    <td><input class="form-control" type="text" name="txtNombre" id="txtNombre" required placeholder="Ingrese su Nombre Completo"></td>
+                    <td><input class="form-control" type="text" name="nombre_completo" id="txtNombre" required placeholder="Ingrese su Nombre Completo"></td>
                 </tr>
                 <tr>
                     <td><label>Rut</label></td>
@@ -65,20 +65,20 @@
                 </tr>
                 <tr>
                     <td><label>Email</label></td>
-                    <td><input class="form-control" required type="email" name="txtEmail" id="txtEmail" placeholder="Ingrese su Email"></td>
+                    <td><input class="form-control" required type="email" name="email" id="txtemail" placeholder="Ingrese su Email"></td>
                 </tr>
                 <tr>
                     <td><label>Fecha de Nacimiento</label></td>
-                    <td><input class="form-control" required max="2001-12-31" type="date" name="txtDate" id="txtDate"></td>
+                    <td><input class="form-control" required max="2001-12-31" type="date" name="fecha_nacimiento" id="txtDate"></td>
                 </tr>
                 <tr>
                     <td><label>Telefono de Contacto</label></td>
-                    <td><input class="form-control" type="tel" name="txtTelefono" id="txtTelefono" required pattern='[\+]\d{3}\d{8}' placeholder="Telefono Ej: +56944556677"></td>
+                    <td><input class="form-control" type="tel" name="telefono_contacto" id="txtTelefono" required pattern='[\+]\d{3}\d{8}' placeholder="Telefono Ej: +56944556677"></td>
                 </tr>
                 <tr>
                     <td><label>Region</label></td>
                     <td>
-                        <select class="custom-select" id="country" name="country" required>
+                        <select class="custom-select" id="country" name="region" required>
                         <option value="" selected disabled>----- Seleccione una Region -----</option>
                         <option value="Región Metropolitana de Santiago">Región Metropolitana de Santiago</option>
                         <option value="Arica y Parinacota">Arica y Parinacota</option>
@@ -100,11 +100,11 @@
                 </tr>
                 <tr>
                     <td><label>Comuna</label></td>
-                    <td><select class="custom-select" id="location" name="location"></select></td>
+                    <td><select class="custom-select" id="location" name="comuna"></select></td>
                 </tr>
                 <tr>
                     <td>Direccion</td>
-                    <td><input class="form-control" type="text" name="txtDireccion" id="txtDireccion" required placeholder="Ingrese su Direccion"></td>
+                    <td><input class="form-control" type="text" name="direccion" id="txtDireccion" required placeholder="Ingrese su Direccion"></td>
                 </tr>
                 <tr>
                     <td><label>Vivienda</label></td>
@@ -117,11 +117,10 @@
                     </select></td>
                 </tr>
             </table>
-            <div class="popup" onsubmit="myFunction()">
-                <button type="submit" name="btnEnviar" class="btn btn-primary">Guardar</button>
-                <span class="popuptext" id="myPopup">Se han guardado tus datos de envio</span>
-            </div>
+
+            <button type="submit" name="btnEnviar" class="btn btn-primary">Guardar</button>
             <button type="reset" class="btn btn-primary">Limpiar</button>
+
         </form>
 
 

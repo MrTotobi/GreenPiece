@@ -1,11 +1,12 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django import forms
 #-----importamos nuestras estructuras-------------------
 from .models import Producto
-from .forms import ProductoForm
+from .forms import ProductoForm,DatosClienteForm
+
 
 
 def index(request):
@@ -18,7 +19,18 @@ def juegos_mesa(request):
     return render(request,'app/juegos_mesa.html')
 
 def formulario(request):
-    return render(request,'app/formulario.html')
+    if request.method == 'POST':
+        form = DatosClienteForm(request.POST)
+        if form.is_valid():
+            model_instance = form.save(commit=False)
+            model_instance.save()
+            return redirect('/formulario')
+        else:
+            return render(request, 'app/formulario.html', {'form': form})
+            
+    else:
+        form = DatosClienteForm()
+        return render(request,'app/formulario.html',{})
 
 #----CREAMOS UNA FUNCIUON PARA AGREGAR CARRERA----
 
@@ -63,6 +75,6 @@ def borrar_producto(request, producto_id):
     if user.has_perm('app.admin'):
         instancia = Producto.objects.get(id=producto_id)
         instancia.delete()
-        return redirect("/")
+        return redirect("/listarProductos")
     else:
         return render (request, 'app/error.html')

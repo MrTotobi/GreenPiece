@@ -17,7 +17,7 @@
         <li>
             Codigo: {{c.codigo}} <br>Nombre: {{c.nombre}} <br>Descripcion: {{c.descripcion}} <br>Comentario: {{c.comentario}} <br>Precio: ${{c.precio}} <br>Stock: {{c.stock}}
             <br><a href="/editarProducto/{{c.id}}">Editar</a>
-            <a href="/borrarProducto/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');">            
+            <a href="/eliminarProducto/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');">            
             Borrar</a>
         </li>
         {% endfor %}
