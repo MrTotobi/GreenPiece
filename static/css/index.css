@@ -129,6 +129,10 @@ body {
     width: 60%
 }
 
+#center {
+    text-align: center;
+}
+
 .container-form {
     display: flex;
     justify-content: center;
@@ -242,8 +246,7 @@ body {
     }
 }
 
-.container-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-form {
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, .2);
 }
