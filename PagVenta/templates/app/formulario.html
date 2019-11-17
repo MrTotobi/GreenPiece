@@ -40,11 +40,12 @@
 
         </div>
 
-        <div class="nav-bar">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Fuera de servicio" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
-            </form>
+        <div>
+            {% if user.is_authenticated %} Bienvenido {{ user.username }}!
+            <p><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'logout' %}">logout</a></p>
+            {% else %}
+            <p>No estas logeado</p>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">Login</a> {% endif %}
         </div>
 
     </div>

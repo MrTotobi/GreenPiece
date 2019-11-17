@@ -32,7 +32,6 @@ def formulario(request):
         form = DatosClienteForm()
         return render(request,'app/formulario.html',{})
 
-#----CREAMOS UNA FUNCIUON PARA AGREGAR CARRERA----
 
 def inscribir_producto(request):
     user = request.user

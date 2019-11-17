@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Green Piece Inscrbir Producto</title>
+    <title>Green Piece - Inscrbir Producto</title>
     <!--JavaScript-->
     <script src="../../../static/libs/jquery.min.js"></script>
     <script src="../../../static/libs/jquery.validate.min.js"></script>
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="headerEditProduct">
+    <div class="header">
 
         <div class="logo">
             <a href="index"><img class="logo" src="{% static 'img/logo-temporal.png' %}" alt="LOGO"></a>
@@ -31,24 +31,45 @@
                 <ul class="nav">
                     <li class="nav-item"><a class="nav-link" href="juegos_mesa">Juegos de Mesa</a></li>
                     <li class="nav-item"><a class="nav-link" href="articulos_geeks">Articulos Geek</a></li>
-                    <li class="nav-item"><a class="nav-link" href="formulario">Ingrese datos de envio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formulario">Registre datos de envio</a></li>
                 </ul>
             </nav>
 
         </div>
-        <div class="nav-bar">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+
+        <div>
+            {% if user.is_authenticated %} Bienvenido {{ user.username }}!
+            <p><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'logout' %}">logout</a></p>
+            {% else %}
+            <p>No estas logeado</p>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">Login</a> {% endif %}
         </div>
 
-        <h1>Inscribir productos</h1>
-        <form method="POST">
-            {% csrf_token %} {{ form}}
+    </div>
 
-            <button type="submit">GRABAR</button>
-        </form>
+    <h1>Inscribir productos</h1>
+    <form method="POST">
+        {% csrf_token %} {{ form}}
+
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">GRABAR</button>
+    </form>
+    <br><br><br>
+    <footer id="fondo">
+        <div id="rss">
+            <img id="rss_img1" src="../../../static/img/Logo-face.png" alt="">
+            <img id="rss_img2" src="../../../static/img/Logo-insta.png" alt="">
+            <img id="rss_img3" src="../../../static/img/Logo-wsp.png" alt="">
+        </div>
+        <div id="derechos">
+            <p>Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Green Piece Store</title>
+    <title>Error</title>
     <!--JavaScript-->
     <script src="../../../static/libs/jquery.min.js"></script>
     <script src="../../../static/libs/jquery.validate.min.js"></script>
@@ -38,21 +38,21 @@
 
         </div>
 
-        <div class="nav-bar">
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Fuera de servicio" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
-            </form>
+        <div>
+            {% if user.is_authenticated %} Bienvenido {{ user.username }}!
+            <p><a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'logout' %}">logout</a></p>
+            {% else %}
+            <p>No estas logeado</p>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'login' %}">Login</a> {% endif %}
         </div>
-
 
     </div>
 
-    <div id="boton_error">
+    <div class="container-error">
 
         <h1>No tienes permiso para acceder a esta pagina</h1>
         <br>
-        <p><a href="index"><button id='boton' class="btn btn-outline-success my-2 my-sm-0" role="button">Volver al index</button></a></p>
+        <p><a href="/index"><button id='boton' class="btn btn-outline-success my-2 my-sm-0" role="button">Volver al index</button></a></p>
 
     </div>
 
