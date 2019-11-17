@@ -49,7 +49,16 @@
                 </div>
             </div>
             {% else %}
-            <a class="btn btn-outline-success my-2 my-sm-0" href="/listarProductos">Listar Productos</a> {% endif %} {% else %}{% endif %}
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Listar Productos
+                    </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <a class="dropdown-item" href="/listarProductos">Listar Todos</a>
+                    <a class="dropdown-item" href="/listarProductos/Juego_de_mesa">Por Juegos de mesa</a>
+                    <a class="dropdown-item" href="/listarProductos/Articulo_Geek">Por Articulo Geek</a>
+                </div>
+            </div>{% endif %} {% else %}{% endif %}
         </div>
 
         <div>
@@ -74,11 +83,16 @@
                 <input class="form-control" type="number" id="codigo" name="codigo" required placeholder="ingrese el codigo"></td>
                 <label> Nombre</label>
                 <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="ingrese el nombre"></td>
+                <label> Tipo</label>
+                <select class="custom-select" name="tipo" required>
+                    <option value="" selected disabled>----- Seleccione el tipo de producto -----</option>
+                    <option value="Juego_de_mesa">Juego de mesa</option>
+                    <option value="Articulo_Geek">Articulo Geek</option>
+                </select>
                 <label> Precio</label>
                 <input class="form-control" type="number" id="precio" name="precio" required placeholder="ingrese el precio del producto"></td>
                 <label> Stock</label>
                 <input class="form-control" type="number" id="stock" name="stock" required placeholder="ingrese el stock"></td>
-
                 <label> Descripcion</label>
                 <input class="form-control" type="text" id="descripcion" name="descripcion" required placeholder="ingrese la Descripcion"></td>
                 <label> Comentario</label>

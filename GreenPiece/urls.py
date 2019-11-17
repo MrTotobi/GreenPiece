@@ -28,4 +28,5 @@ urlpatterns = [
     path('editarProducto/<int:producto_id>',include('PagVenta.urls')),
     path('eliminarProducto/<int:producto_id>',include('PagVenta.urls')),
     path('listarProductos',include('PagVenta.urls')),
+    path('listarProductos/<str:producto_tipo>',include('PagVenta.urls'))
 ]

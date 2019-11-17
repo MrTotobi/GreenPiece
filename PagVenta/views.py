@@ -52,6 +52,10 @@ def listar_producto(request):
     productos = Producto.objects.all()
     return render(request,"app/listar_productos.html",{'productos': productos})
 
+def listar_tipo(request,producto_tipo):
+    productos = Producto.objects.filter(tipo=producto_tipo)
+    return render(request,"app/listar_tipo.html",{'productos': productos})
+
 def editar_producto (request, producto_id):
     user = request.user
     if user.has_perm('app.admin'):

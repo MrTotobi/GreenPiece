@@ -5,6 +5,7 @@ from django.utils.translation import ugettext as _
 class Producto(models.Model):
     codigo = models.CharField(max_length=5)
     nombre = models.CharField(max_length=100)
+    tipo = models.TextField(default='')
     descripcion = models.TextField()
     comentario = models.TextField()
     precio = models.IntegerField()

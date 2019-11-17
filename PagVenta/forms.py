@@ -6,6 +6,7 @@ class ProductoForm(forms.ModelForm):
         model = Producto
         fields = ['codigo',
         'nombre',
+        'tipo',
         'descripcion',
         'comentario',
          'precio',

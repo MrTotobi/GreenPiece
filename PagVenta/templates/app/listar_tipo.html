@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Green Piece - Listar Productos</title>
+    <title>Green Piece - Listar Articulos</title>
     <!--JavaScript-->
     <script src="../../../static/libs/jquery.min.js"></script>
     <script src="../../../static/libs/jquery.validate.min.js"></script>
@@ -20,7 +20,7 @@
     <div class="header">
 
         <div class="logo">
-            <a href="index"><img class="logo" src="{% static 'img/logo-temporal.png' %}" alt="LOGO"></a>
+            <a href="/index"><img class="logo" src="{% static 'img/logo-temporal.png' %}" alt="LOGO"></a>
             <a id="text-logo" href="index">
                 <h2 id="name">GreenPiece <br> Store</h2>
             </a>
@@ -71,8 +71,6 @@
     </div>
 
     <h1>Listar Productos</h1>
-    {% if request.user.is_superuser %}<br><a href="/listarProductos/Juego_de_mesa" class="btn btn-outline-success my-2 my-sm-0">Listar por Juegos de mesa</a>
-    <a href="/listarProductos/Articulo_Geek" class="btn btn-outline-success my-2 my-sm-0">Listar por Articulos Geek</a>{% endif %}
     <ul>
         {% for c in productos %}
         <li>
