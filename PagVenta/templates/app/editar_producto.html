@@ -62,47 +62,22 @@
 
     </div>
     <div class="agregar_productos">
-      <form method="POST" id="formulario">
+        <form method="POST" id="formulario">
             {% csrf_token %}
-            <div class="nombre_superior"> 
-                <h1>Inscribir productos</h1>
-            </div>
 
-            <div class="datos_productos">
-                <label> Codigo</label>
-                <input class="form-control" type="text" id="codigo" name="codigo" required oninput="checkCodigo(this)" placeholder="ingrese el codigo"></td>
-                <label> Nombre</label>
-                <input class="form-control" type="text" id="nombre" name="nombre" required oninput="checkNombre(this)" placeholder="ingrese el nombre"></td>
-                <label> Precio</label>
-                <input class="form-control" type="text" id="precio" name="precio" required oninput="checkPrecio(this)" placeholder="ingrese el precio del producto"></td>
-                <label> Stock</label>
-                <input class="form-control" type="text" id="stock" name="stock" required oninput="checkStock(this)" placeholder="ingrese el stock"></td>
-            
-            
-
-            
-                <label> Descripcion</label>
-                <input class="form-control" type="text" id="descripcion" name="descripcion" required oninput="checkDescripcion(this)" placeholder="ingrese la Descripcion"></td>
-                <label> Comentario</label>
-                <input class="form-control" type="text" id="comentario" name="comentario" required oninput="checkComentario(this)" placeholder="ingrese el Comentario"></td>
-
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Grabar</button>
-            </div>
+            <h1>Editar producto</h1>
+            <br>
+            <label> Codigo: </label> {{form.codigo}}<br>
+            <label> Nombre: </label>{{form.nombre}}<br>
+            <label> Precio: </label>{{form.precio}}<br>
+            <label> Stock: </label> {{form.stock}}<br>
+            <label> Descripcion: </label> {{form.descripcion}}<br>
+            <label> Comentario: </label> {{form.comentario}}<br>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Grabar</button>
 
         </form>
 
-
-
-
-    
-     
-    
-
-        
-     
     </div>
-
-    <a href="/listarProductos"><button id='boton' class="btn btn-outline-success my-2 my-sm-0" role="button">Volver</button></a>
 
     <br><br><br>
     <footer id="fondo">
