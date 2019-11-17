@@ -247,6 +247,22 @@ body {
 }
 
 .login-form {
+
+    background-color: white;
     border: 1px solid;
     border-color: rgba(0, 0, 0, .2);
+    padding: 10px 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%
+   
+}
+
+.agregar_productos{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 10px 30px;
+
 }
