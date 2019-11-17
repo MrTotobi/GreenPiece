@@ -6,22 +6,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <title>Listar Producto</title>
+    <title>Green Piece Listar Producto</title>
+    <!--JavaScript-->
+    <script src="../../../static/libs/jquery.min.js"></script>
+    <script src="../../../static/libs/jquery.validate.min.js"></script>
+    <script src="../../../static/libs/bootstrap.min.js"></script>
+    <!--css-->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>Listar Productos</h1>
-    <ul>
-        {% for c in productos %}
-        <li>
-            Codigo: {{c.codigo}} <br>Nombre: {{c.nombre}} <br>Descripcion: {{c.descripcion}} <br>Comentario: {{c.comentario}} <br>Precio: ${{c.precio}} <br>Stock: {{c.stock}}
-            <br><a href="/editarProducto/{{c.id}}">Editar</a>
-            <a href="/eliminarProducto/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');">            
+    <div class="headerEditProduct">
+
+        <div class="logo">
+            <a href="index"><img class="logo" src="{% static 'img/logo-temporal.png' %}" alt="LOGO"></a>
+            <a id="text-logo" href="index">
+                <h2 id="name">GreenPiece <br> Store</h2>
+            </a>
+        </div>
+
+        <div class="nav">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="juegos_mesa">Juegos de Mesa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articulos_geeks">Articulos Geek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="formulario">Ingrese datos de envio</a></li>
+                </ul>
+            </nav>
+
+        </div>
+        <div class="nav-bar">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
+        </div>
+
+        <h1>Listar Productos</h1>
+        <ul>
+            {% for c in productos %}
+            <li>
+                Codigo: {{c.codigo}} <br>Nombre: {{c.nombre}} <br>Descripcion: {{c.descripcion}} <br>Comentario: {{c.comentario}} <br>Precio: ${{c.precio}} <br>Stock: {{c.stock}}
+                <br><a href="/editarProducto/{{c.id}}">Editar</a>
+                <a href="/eliminarProducto/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');">            
             Borrar</a>
-        </li>
-        {% endfor %}
-    </ul>
+            </li>
+            {% endfor %}
+        </ul>
 </body>
 
 </html>
