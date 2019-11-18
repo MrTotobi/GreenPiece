@@ -20,8 +20,8 @@
     <div class="header">
 
         <div class="logo">
-            <a href="index"><img class="logo" src="{% static 'img/logo-temporal.png' %}" alt="LOGO"></a>
-            <a id="text-logo" href="index">
+            <a href="/index"><img class="logo" src="{% static 'img/logo-temporal.png' %}" alt="LOGO"></a>
+            <a id="text-logo" href="/index">
                 <h2 id="name">GreenPiece <br> Store</h2>
             </a>
         </div>
@@ -29,9 +29,9 @@
         <div class="nav">
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="juegos_mesa">Juegos de Mesa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="articulos_geeks">Articulos Geek</a></li>
-                    <li class="nav-item"><a class="nav-link" href="formulario">Ingrese datos de envio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/juegos_mesa">Juegos de Mesa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/articulos_geeks">Articulos Geek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/formulario">Ingrese datos de envio</a></li>
                 </ul>
             </nav>
 
@@ -76,19 +76,36 @@
 
             <h1>Editar producto</h1>
             <br>
-            <label> Codigo: </label> {{form.codigo}}<br>
-            <label> Nombre: </label>{{form.nombre}}<br>
-            <label> Tipo: </label>{{form.tipo}}<br>
-            <label> Precio: </label>{{form.precio}}<br>
-            <label> Stock: </label> {{form.stock}}<br>
-            <label> Descripcion: </label> {{form.descripcion}}<br>
-            <label> Comentario: </label> {{form.comentario}}<br>
+            <label> Codigo: </label> <input required class="form-control" type="number" name="codigo" value="{{form.codigo.value}}" max="99999" oninvalid="this.setCustomValidity('El codigo no puede exceder los 5 digitos')" oninput="this.setCustomValidity('')"><br>
+            <label> Nombre: </label><input type="text" name="nombre" class="form-control" value="{{form.nombre.value}}"><br>
+            <label> Tipo: </label>
+            <select name="tipo" class="custom-select" required>
+                {% if form.tipo.value == 'Articulo_Geek' %}
+                    <option value="Juego_de_mesa">Juego de mesa</option>
+                    <option value="Articulo_Geek" selected>Articulo Geek</option>
+                {% endif %}
+                {% if form.tipo.value == 'Juego_de_mesa' %}
+                    <option value="Juego_de_mesa" selected>Juego de mesa</option>
+                    <option value="Articulo_Geek">Articulo Geek</option>
+                {% endif %}
+            </select>
+            <br>
+            <label> Precio: </label><input type="number" name="precio" class="form-control" value="{{form.precio.value}}"><br>
+            <label> Stock: </label><input type="number" name="stock" class="form-control" value="{{form.stock.value}}"><br>
+            <label> Descripcion: </label><input type="text" name="descripcion" class="form-control" value="{{form.descripcion.value}}"><br>
+            <label> Comentario: </label><input type="text" name="comentario" class="form-control" value="{{form.comentario.value}}"><br>
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Grabar</button>
 
         </form>
 
     </div>
-
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <br><br><br>
     <footer id="fondo">
         <div id="rss">

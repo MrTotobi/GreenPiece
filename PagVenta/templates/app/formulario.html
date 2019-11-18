@@ -47,7 +47,6 @@
                           Administrar Productos
                         </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <a class="dropdown-item" href="/listarProductos">Listar Todos</a>
                     <a class="dropdown-item" href="agregarProducto">Agregar Producto</a>
                     <a class="dropdown-item" href="listarProductos">Listar Productos</a>
                 </div>
@@ -58,6 +57,7 @@
                       Listar Productos
                     </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <a class="dropdown-item" href="/listarProductos">Listar Todos</a>
                     <a class="dropdown-item" href="/listarProductos/Juego_de_mesa">Por Juegos de mesa</a>
                     <a class="dropdown-item" href="/listarProductos/Articulo_Geek">Por Articulo Geek</a>
                 </div>
@@ -150,6 +150,13 @@
 
 
     </div>
+    <br> {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     <br><br><br>
     <footer id="fondo">
         <div id="rss">

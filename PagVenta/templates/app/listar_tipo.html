@@ -71,6 +71,10 @@
     </div>
 
     <h1>Listar Productos</h1>
+    {% if user.is_authenticated %}<br><a href="/listarProductos" class="btn btn-outline-success my-2 my-sm-0">Listar todo</a>
+    <a href="/listarProductos/Juego_de_mesa" class="btn btn-outline-success my-2 my-sm-0">Listar por Juegos de mesa</a>
+    <a href="/listarProductos/Articulo_Geek" class="btn btn-outline-success my-2 my-sm-0">Listar por Articulos Geek</a><br>{% endif %}
+    <br>
     <ul>
         {% for c in productos %}
         <li>

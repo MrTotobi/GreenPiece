@@ -75,14 +75,14 @@
         <form method="POST" id="formulario">
             {% csrf_token %}
             <div class="nombre_superior">
-                <h1>Inscribir productos</h1>
+                <h1>Agregar productos</h1>
             </div>
 
             <div class="datos_productos">
                 <label> Codigo</label>
-                <input class="form-control" type="number" id="codigo" name="codigo" required placeholder="ingrese el codigo"></td>
+                <input class="form-control" type="number" id="codigo" name="codigo" required placeholder="Ingrese el codigo" max="99999" oninvalid="this.setCustomValidity('El codigo no puede exceder los 5 digitos')" oninput="this.setCustomValidity('')"></td>
                 <label> Nombre</label>
-                <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="ingrese el nombre"></td>
+                <input class="form-control" type="text" id="nombre" name="nombre" required placeholder="Ingrese el nombre"></td>
                 <label> Tipo</label>
                 <select class="custom-select" name="tipo" required>
                     <option value="" selected disabled>----- Seleccione el tipo de producto -----</option>
@@ -90,13 +90,13 @@
                     <option value="Articulo_Geek">Articulo Geek</option>
                 </select>
                 <label> Precio</label>
-                <input class="form-control" type="number" id="precio" name="precio" required placeholder="ingrese el precio del producto"></td>
+                <input class="form-control" type="number" id="precio" name="precio" required placeholder="Ingrese el precio del producto"></td>
                 <label> Stock</label>
-                <input class="form-control" type="number" id="stock" name="stock" required placeholder="ingrese el stock"></td>
+                <input class="form-control" type="number" id="stock" name="stock" required placeholder="Ingrese el stock"></td>
                 <label> Descripcion</label>
-                <input class="form-control" type="text" id="descripcion" name="descripcion" required placeholder="ingrese la Descripcion"></td>
+                <input class="form-control" type="text" id="descripcion" name="descripcion" required placeholder="Ingrese la Descripcion"></td>
                 <label> Comentario</label>
-                <input class="form-control" type="text" id="comentario" name="comentario" required placeholder="ingrese el Comentario"></td>
+                <input class="form-control" type="text" id="comentario" name="comentario" required placeholder="Ingrese el Comentario"></td>
 
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Grabar</button>
             </div>
@@ -104,19 +104,14 @@
         </form>
 
 
-
-
-
-
-
-
-
-
     </div>
-
-
-
-
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
     <br><br><br>
     <footer id="fondo">

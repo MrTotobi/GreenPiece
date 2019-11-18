@@ -6,6 +6,7 @@ from django import forms
 #-----importamos nuestras estructuras-------------------
 from .models import Producto
 from .forms import ProductoForm,DatosClienteForm
+from django.contrib import messages
 
 
 
@@ -24,6 +25,7 @@ def formulario(request):
         if form.is_valid():
             model_instance = form.save(commit=False)
             model_instance.save()
+            messages.success(request, 'Los datos de envio se agregaron correctamente')
             return redirect('/formulario')
         else:
             return render(request, 'app/formulario.html', {'form': form})
@@ -41,20 +43,16 @@ def inscribir_producto(request):
             if(form.is_valid):
                 model_instance = form.save(commit=False)
                 model_instance.save()
+                messages.success(request, 'El producto se agrego correctamente')
                 return redirect('/agregarProducto')
+            else:
+                messages.error(request,'El producto no se agrego correctamente')
+                return HttpResponseRedirect('app/ins_producto.html')
         else:
             form = ProductoForm()
             return render(request, "app/ins_producto.html",{'form':form})
     else:
         return render (request, 'app/error.html')
-
-def listar_producto(request):
-    productos = Producto.objects.all()
-    return render(request,"app/listar_productos.html",{'productos': productos})
-
-def listar_tipo(request,producto_tipo):
-    productos = Producto.objects.filter(tipo=producto_tipo)
-    return render(request,"app/listar_tipo.html",{'productos': productos})
 
 def editar_producto (request, producto_id):
     user = request.user
@@ -67,10 +65,20 @@ def editar_producto (request, producto_id):
             if form.is_valid():
                 instancia= form.save(commit=False)
                 instancia.save()
-
+                messages.success(request, 'El producto se edito correctamente')
+            else:
+                messages.error(request, 'El producto no se edito correctamente')
         return render(request, "app/editar_producto.html",{'form':form})
     else:
         return render (request, 'app/error.html')
+
+def listar_producto(request):
+    productos = Producto.objects.all()
+    return render(request,"app/listar_productos.html",{'productos': productos})
+
+def listar_tipo(request,producto_tipo):
+    productos = Producto.objects.filter(tipo=producto_tipo)
+    return render(request,"app/listar_tipo.html",{'productos': productos})
 
 
 def borrar_producto(request, producto_id):
