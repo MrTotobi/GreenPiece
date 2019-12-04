@@ -70,21 +70,23 @@
         </div>
     </div>
 
-    <h1>Listar Productos</h1>
-    {% if user.is_authenticated %}<br><a href="/listarProductos" class="btn btn-outline-success my-2 my-sm-0">Listar todo</a>
-    <a href="/listarProductos/Juego_de_mesa" class="btn btn-outline-success my-2 my-sm-0">Listar por Juegos de mesa</a>
-    <a href="/listarProductos/Articulo_Geek" class="btn btn-outline-success my-2 my-sm-0">Listar por Articulos Geek</a>{% endif %}
-    <br><br>
+    <h1>Datos Almacenados</h1>
+
     <ul>
-        {% for c in productos %}
+        {% if not formularios %}
+        <li>No hay registros almacenados</li>
+        <br><a href="/inscribir_formulario" class="btn btn-outline-success my-2 my-sm-0">Agregar</a> {% else %} {% for c in formularios %}
         <li>
-            Codigo: {{c.codigo}} <br>Nombre: {{c.nombre}} <br> {% if c.tipo == 'Juego_de_mesa' %} Tipo: Juego de Mesa{% endif %} {% if c.tipo == 'Articulo_Geek' %} Tipo: Articulo Geek{% endif %}<br>Descripcion: {{c.descripcion}} <br>Comentario: {{c.comentario}}
-            <br>Precio: ${{c.precio}} <br>Stock: {{c.stock}} <br>Imagen: <br><img src="{{c.imagen}}">
-            <br><a href="/editarProducto/{{c.id}}" class="btn btn-outline-success my-2 my-sm-0">Editar</a>
-            <a class="btn btn-outline-success my-2 my-sm-0" href="/eliminarProducto/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');">            
-            Borrar</a>
+            Nombre: {{c.nombre_completo}} <br>Rut: {{c.rut}} <br>Email: {{c.email}} <br>Fecha de nacimiento: {{c.fecha_nacimiento}} <br>Telefono: {{c.telefono_contacto}} <br>Region: {{c.region}} <br>Comuna: {{c.comuna}} <br>Direccion: {{c.direccion}}
+            <br> {% if c.vivienda == '1' %}Vivienda: Casa con patio grande{% endif %} {% if c.vivienda == '2' %}Vivienda: Casa con patio pequeño{% endif %} {% if c.vivienda == '3' %}Vivienda: Casa sin patio{% endif %} {% if c.vivienda == '4' %}Vivienda:
+            Departamento{% endif %}
+            <br><a href="/editar_formulario/{{c.id}}" class="btn btn-outline-success my-2 my-sm-0">Editar</a>
+            <a class="btn btn-outline-success my-2 my-sm-0" href="/borrar_formulario/{{c.id}}" onclick="return confirm('¿Seguro de borrar?');">            
+                Borrar</a>
+
         </li>
         {% endfor %}
+        <br><a href="/inscribir_formulario" class="btn btn-outline-success my-2 my-sm-0">Agregar Otro</a> {% endif %}
     </ul>
     <br><br><br>
     <footer id="fondo">

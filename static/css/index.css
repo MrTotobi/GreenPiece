@@ -11,6 +11,11 @@
     z-index: 100;
 }
 
+#img_producto {
+    width: 100px;
+    height: 100px;
+}
+
 .logo {
     height: 70px;
     float: left;
@@ -247,7 +252,6 @@ body {
 }
 
 .login-form {
-
     background-color: white;
     border: 1px solid;
     border-color: rgba(0, 0, 0, .2);
@@ -256,13 +260,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 70%
-   
 }
 
-.agregar_productos{
+.agregar_productos {
     display: flex;
     justify-content: space-around;
     text-align: center;
     padding: 10px 30px;
-
 }

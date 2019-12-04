@@ -29,9 +29,9 @@
         <div class="nav">
             <nav>
                 <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="juegos_mesa">Juegos de Mesa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="articulos_geeks">Articulos Geek</a></li>
-                    <li class="nav-item"><a class="nav-link" href="formulario">Registre datos de envio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/juegos_mesa">Juegos de Mesa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/articulos_geeks">Articulos Geek</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/formularios">Datos de envio</a></li>
                 </ul>
             </nav>
 
@@ -72,7 +72,7 @@
     </div>
 
     <div class="agregar_productos">
-        <form method="POST" id="formulario">
+        <form method="POST" id="formulario" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="nombre_superior">
                 <h1>Agregar productos</h1>
@@ -97,7 +97,8 @@
                 <input class="form-control" type="text" id="descripcion" name="descripcion" required placeholder="Ingrese la Descripcion"></td>
                 <label> Comentario</label>
                 <input class="form-control" type="text" id="comentario" name="comentario" required placeholder="Ingrese el Comentario"></td>
-
+                <label>Imagen</label><br>
+                <input type="file" name="imagen" required> <br><br>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Grabar</button>
             </div>
 

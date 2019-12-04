@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
@@ -23,10 +25,14 @@ urlpatterns = [
     path('index',include('PagVenta.urls')),
     path('articulos_geeks',include('PagVenta.urls')),
     path('juegos_mesa',include('PagVenta.urls')),
-    path('formulario',include('PagVenta.urls')),
+    path('formularios',include('PagVenta.urls')),
+    path('inscribir_formulario',include('PagVenta.urls')),
+    path('borrar_formulario/<int:form_id>',include('PagVenta.urls')),
+    path('editar_formulario/<int:form_id>',include('PagVenta.urls')),
     path('agregarProducto',include('PagVenta.urls')),
     path('editarProducto/<int:producto_id>',include('PagVenta.urls')),
     path('eliminarProducto/<int:producto_id>',include('PagVenta.urls')),
     path('listarProductos',include('PagVenta.urls')),
     path('listarProductos/<str:producto_tipo>',include('PagVenta.urls'))
 ]
+

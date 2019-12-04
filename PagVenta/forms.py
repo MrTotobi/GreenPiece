@@ -1,6 +1,7 @@
 from django import forms
 from .models import Producto,Datos_Cliente
 
+
 class ProductoForm(forms.ModelForm):
     class Meta:
         model = Producto
@@ -10,7 +11,8 @@ class ProductoForm(forms.ModelForm):
         'descripcion',
         'comentario',
          'precio',
-         'stock']
+         'stock',
+         'imagen']
 
 class DatosClienteForm(forms.ModelForm):
     class Meta:

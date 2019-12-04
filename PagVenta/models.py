@@ -1,6 +1,10 @@
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext as _
+from django.core.files import File
+from urllib.request import urlopen
+from tempfile import NamedTemporaryFile
+
 
 class Producto(models.Model):
     codigo = models.CharField(max_length=5)
@@ -10,6 +14,7 @@ class Producto(models.Model):
     comentario = models.TextField()
     precio = models.IntegerField()
     stock = models.IntegerField()
+    imagen = models.FileField(upload_to='static/img')
 
     def __str__(self):
         return self.codigo

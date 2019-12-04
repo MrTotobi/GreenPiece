@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: =?utf-8?q?Contrase=C3=B1a_restablecida_en_localhost=3A8000?=
+From: webmaster@localhost
+To: cliente@gmail.com
+Date: Wed, 04 Dec 2019 08:05:24 -0000
+Message-ID: <157544672400.9620.3167738805074455836@DESKTOP-90TEAEG>
+
+
+Ha recibido este correo electrónico porque ha solicitado restablecer la contraseña para su cuenta en localhost:8000.
+
+Por favor, vaya a la página siguiente y escoja una nueva contraseña.
+
+http://localhost:8000/accounts/reset/Mw/5bz-1f1887aedd4bfcf53e14/
+
+Su nombre de usuario, en caso de haberlo olvidado: cliente
+
+¡Gracias por usar nuestro sitio!
+
+El equipo de localhost:8000
+
+
+
+-------------------------------------------------------------------------------
