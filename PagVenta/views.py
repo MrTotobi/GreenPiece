@@ -31,6 +31,10 @@ def formularios(request):
     formularios = Datos_Cliente.objects.all()
     return render(request,"app/formularios.html",{'formularios': formularios})
 
+def formulario_tipo(request,formulario_tipo):
+    formularios = Datos_Cliente.objects.filter(vivienda=formulario_tipo)
+    return render(request,"app/formularios_tipo.html",{'formularios': formularios})
+
 
 def inscribir_formulario(request):
     user = request.user

@@ -26,6 +26,7 @@ urlpatterns = [
     path('articulos_geeks',include('PagVenta.urls')),
     path('juegos_mesa',include('PagVenta.urls')),
     path('formularios',include('PagVenta.urls')),
+    path('formularios/<int:formulario_tipo>',include('PagVenta.urls')),
     path('inscribir_formulario',include('PagVenta.urls')),
     path('borrar_formulario/<int:form_id>',include('PagVenta.urls')),
     path('editar_formulario/<int:form_id>',include('PagVenta.urls')),

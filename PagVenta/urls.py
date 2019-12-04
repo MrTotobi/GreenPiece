@@ -21,6 +21,7 @@ urlpatterns += [
     path('articulos_geeks',views.articulos_geek),
     path('juegos_mesa',views.juegos_mesa),
     path('formularios',views.formularios),
+    path('formularios/<int:formulario_tipo>',views.formulario_tipo),
     path('inscribir_formulario',views.inscribir_formulario),
     path('editar_formulario/<int:form_id>',views.editar_formulario),
     path('borrar_formulario/<int:form_id>',views.borrar_formulario),
